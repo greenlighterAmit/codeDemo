@@ -11,6 +11,7 @@ sonarqube {
         property "sonar.host.url", "http://localhost:9000"
         property "sonar.language", "java,kotlin"
         property "sonar.sources", "src/main/java"
+        property "sonar.qualitygate.wait", true
         property "sonar.test", "src/androidTest/java"
         property "sonar.login", "admin"
         property "sonar.password", "5529999444"
