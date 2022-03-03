@@ -9,8 +9,9 @@ sonarqube {
         property "sonar.projectName", "codedemo"
         property "sonar.projectKey", "codedemo"
         property "sonar.host.url", "http://localhost:9000"
-        property "sonar.language", "java"
-        property "sonar.sources", "src/main/"
+        property "sonar.language", "java,kotlin"
+        property "sonar.sources", "src/main/java"
+        property "sonar.test", "src/androidTest/java"
         property "sonar.login", "admin"
         property "sonar.password", "5529999444"
     }
