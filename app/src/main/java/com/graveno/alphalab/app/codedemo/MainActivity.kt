@@ -41,10 +41,10 @@ class MainActivity : AppCompatActivity(), MainAdapter.OnItemClick, AddMainAdapte
                 //real app...
                 Log.e(TAG,"launching now....")
                 CoroutineScope(Main).launch {
-                    someVM().getApidata().observe(this@MainActivity, { list ->
-                        Log.e(TAG,"found data as ${list.toArray().toString()}")
+                    someVM().getApidata().observe(this@MainActivity) { list ->
+                        Log.e(TAG, "found data as ${list.toArray().toString()}")
                         viewModelHandler(list)
-                    })
+                    }
                 }
             }
             false -> {
