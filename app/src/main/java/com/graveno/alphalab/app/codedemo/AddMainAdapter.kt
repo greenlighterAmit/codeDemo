@@ -11,9 +11,7 @@ class AddMainAdapter(
     var addMainList : ArrayList<MainRcModel>,
     val callback : OnAddMain
 ) : RecyclerView.Adapter<AddMainAdapter.ViewHold>() {
-    class ViewHold(val binder : AdapterAddMainBinding) : RecyclerView.ViewHolder(binder.root) {
-
-    }
+    class ViewHold(val binder : AdapterAddMainBinding) : RecyclerView.ViewHolder(binder.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHold {
         val binder : AdapterAddMainBinding = AdapterAddMainBinding.inflate(
