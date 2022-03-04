@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity(), MainAdapter.OnItemClick, AddMainAdapte
             }
             false -> {
                 //fake app...
+                Log.e(TAG,"fake app detected...")
                 killProcess(this)
             }
         }
