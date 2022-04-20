@@ -16,7 +16,7 @@ subprojects {
 sonarqube {
     properties {
         property "sonar.projectName", "codedemo"
-        property "sonar.projectKey", "codedemo"
+        property "sonar.projectKey", "e5a7d178744683ddcc011f7a5e5fda286fb85dcf"
         property "sonar.host.url", "http://localhost:9000"
         property "sonar.language", "java,kotlin"
         property "sonar.sources", "src/main/java"

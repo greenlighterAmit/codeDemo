@@ -1,17 +1,16 @@
 package com.graveno.alphalab.app.codedemo
 
 import android.app.Dialog
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_IDLE
 import com.graveno.alphalab.app.codedemo.AppCloning.checkAppCloning
 import com.graveno.alphalab.app.codedemo.AppCloning.killProcess
 import com.graveno.alphalab.app.codedemo.databinding.ActivityMainBinding
-import com.graveno.alphalab.app.codedemo.databinding.AdapterAddMainBinding
 import com.graveno.alphalab.app.codedemo.databinding.DialogAddMainBinding
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
@@ -19,9 +18,10 @@ import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flow
-import org.json.JSONArray
-import java.util.concurrent.ThreadLocalRandom
+import java.nio.charset.StandardCharsets
 import java.util.concurrent.TimeUnit
+import kotlin.collections.ArrayList
+
 
 class MainActivity : AppCompatActivity(), MainAdapter.OnItemClick, AddMainAdapter.OnAddMain {
 
@@ -87,6 +87,33 @@ class MainActivity : AppCompatActivity(), MainAdapter.OnItemClick, AddMainAdapte
             diaBinder.rcAddMain.layoutManager = LinearLayoutManager(this)
             diaBinder.rcAddMain.adapter = adapterAdd
             dialog.show()
+        }
+
+        binder.btnTap.text = "tap to show Token Id"
+        binder.btnTap.setOnClickListener {
+            //imei in android 11 and above...
+
+            binder.txtEncrypt.text = AppUniqueId.getUniquePsuedoID()
+            //endregion
+            //region encryption ,method...
+//            try {
+//                val password = "GreenLightPlanet"
+//                val data = binder.txtUuid.text.toString().toByteArray(StandardCharsets.ISO_8859_1)
+//                val encData: AppUniqueId.EncryptedData = AppUniqueId.encrypt(password, data)
+//                val decryptedData: ByteArray =
+//                    AppUniqueId.decrypt(password, encData.salt!!, encData.iv!!,
+//                        encData.encryptedData!!
+//                    )!!
+//                val decDataAsString = String(decryptedData, StandardCharsets.ISO_8859_1)
+////                Toast.makeText(this, decDataAsString, Toast.LENGTH_LONG).show()
+//                binder.txtDecrypt.text = decDataAsString
+//                binder.txtEncrypt.text = "found encrypted data as ${encData.encryptedData} and ${encData.iv} with salt as ${encData.salt}"
+//            } catch (e: Exception) {
+//                e.printStackTrace()
+//                Log.e(TAG,"found error as ${e.localizedMessage}")
+//            }
+            //endregion
+//            binder.txtUuid.text = UniqueDeviceID.getUniqueId()
         }
     }
 
